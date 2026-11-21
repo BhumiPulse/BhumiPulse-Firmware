@@ -1,0 +1,19 @@
+# ESP-IDF build outputs (never commit binaries or build caches)
+build/
+**/build/
+
+# ESP Component Manager downloads (auto-restored via idf_component.yml + dependencies.lock)
+managed_components/
+**/managed_components/
+
+# Local sdkconfig files (commit sdkconfig.defaults instead to prevent merge conflicts)
+sdkconfig
+sdkconfig.old
+**/sdkconfig
+**/sdkconfig.old
+
+# IDE, OS & log clutter
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
