@@ -1,0 +1,16 @@
+menu "BhumiPulse LoRa Configuration"
+    config BHUMIPULSE_ROLE_GATEWAY
+        bool "Compile shared RF stack for BhumiPulse Gateway (Master)"
+        default n
+        help
+            Enables Gateway-only hooks such as Alive Table updates on relay collapse.
+            Leave disabled (n) for BhumiPulse_Node builds.
+
+    config BHUMIPULSE_LORA_TX_POWER
+        int "Default LoRa TX Power (dBm, PA_BOOST)"
+        range 2 20
+        default 14
+        help
+            Use 14 dBm for bench/close-range testing to prevent SX1276 saturation,
+            and up to 20 dBm for long-range field deployment.
+endmenu

@@ -1,0 +1,14 @@
+idf_component_register(
+    SRCS
+        "esp_utils.c"
+        "mac_layer.c"
+        "network_layer.c"
+    INCLUDE_DIRS
+        "."
+    REQUIRES
+        farmpulse_config
+        sx127x
+        driver
+        esp_timer
+        spi_flash
+)
