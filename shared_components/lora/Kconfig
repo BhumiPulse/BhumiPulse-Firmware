@@ -6,6 +6,13 @@ menu "BhumiPulse LoRa Configuration"
             Enables Gateway-only hooks such as Alive Table updates on relay collapse.
             Leave disabled (n) for BhumiPulse_Node builds.
 
+    config BHUMIPULSE_NETWORK_ID
+        hex "Default Network PAN ID"
+        range 0x0001 0xFFFE
+        default 0x001A
+        help
+            Default 16-bit Personal Area Network (PAN) ID for BhumiPulse mesh.
+
     config BHUMIPULSE_LORA_TX_POWER
         int "Default LoRa TX Power (dBm, PA_BOOST)"
         range 2 20
@@ -13,4 +20,18 @@ menu "BhumiPulse LoRa Configuration"
         help
             Use 14 dBm for bench/close-range testing to prevent SX1276 saturation,
             and up to 20 dBm for long-range field deployment.
+
+    config MESH_MAX_RETRIES
+        int "Maximum LoRa MAC/Relay Retries"
+        range 1 10
+        default 3
+        help
+            Number of transmission attempts before declaring a neighbor hop failed.
+
+    config MESH_MAX_HOPS
+        int "Maximum LoRa Mesh Hop Count (TTL)"
+        range 1 15
+        default 5
+        help
+            Maximum number of hops a packet can traverse across the linear mesh.
 endmenu

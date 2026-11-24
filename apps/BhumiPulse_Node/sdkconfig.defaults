@@ -1,0 +1,13 @@
+# Target MCU
+CONFIG_IDF_TARGET="esp32s3"
+
+# BhumiPulse Shared RF Stack Configuration
+CONFIG_BHUMIPULSE_ROLE_GATEWAY=n
+CONFIG_BHUMIPULSE_LORA_TX_POWER=14
+
+# Certification & Traceability: Deterministic bit-for-bit builds
+CONFIG_APP_REPRODUCIBLE_BUILD=y
+
+# Keep standard 4MB flash config for current LilyGO T3S3 bench boards
+# (Will switch to 16MB + custom OTA partition table in Phase-2)
+CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y

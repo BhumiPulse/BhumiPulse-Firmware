@@ -1,0 +1,15 @@
+idf_component_register(
+    SRCS
+        "main.c"
+        "farmnode_parser.c"
+    INCLUDE_DIRS
+        "."
+    REQUIRES
+        lora
+        farmpulse_config
+        sensors
+        nvs_flash
+        driver
+        esp_app_format
+        esp_timer
+)
